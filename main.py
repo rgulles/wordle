@@ -1,7 +1,13 @@
-from tkinter import *
+from tkinter import Tk
 
-root = Tk()
-root.title('Wordle')
-root.geometry('600x700')
+class Wordle:    
+    def __init__(self, master):
+        self.master = master
+        
+        self.master.title('Wordle')
+        self.master.geometry('600x700')
 
-root.mainloop()
+if __name__ == "__main__":
+    root = Tk()
+    game = Wordle(root)
+    root.mainloop()
