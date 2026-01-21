@@ -2,6 +2,7 @@ from tkinter import Tk, Frame
 
 from settings import Settings
 from welcome_screen import WelcomeScreen
+from difficulty_screen import DifficultyScreen
 
 class Wordle:    
     def __init__(self, master):
@@ -15,7 +16,13 @@ class Wordle:
         self.container = Frame(self.master)
         self.container.pack()
 
-        self.welcome_screen = WelcomeScreen(self.container)
+        self.welcome_screen = WelcomeScreen(self.container, self.show_difficulty_screen)
+
+    def show_difficulty_screen(self):
+        for widget in self.container.winfo_children():
+            widget.pack_forget()
+       
+        self.difficulty_screen = DifficultyScreen(self.container)
 
 if __name__ == "__main__":
     root = Tk()
