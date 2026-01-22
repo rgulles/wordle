@@ -16,13 +16,19 @@ class Wordle:
         self.container = Frame(self.master)
         self.container.pack()
 
+        self.show_welcome_screen()
+
+    def show_welcome_screen(self):
+        for widget in self.container.winfo_children():
+            widget.pack_forget()
+       
         self.welcome_screen = WelcomeScreen(self.container, self.show_difficulty_screen)
 
     def show_difficulty_screen(self):
         for widget in self.container.winfo_children():
             widget.pack_forget()
        
-        self.difficulty_screen = DifficultyScreen(self.container)
+        self.difficulty_screen = DifficultyScreen(self.container, self.show_welcome_screen)
 
 if __name__ == "__main__":
     root = Tk()

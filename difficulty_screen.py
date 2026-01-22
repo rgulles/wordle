@@ -3,12 +3,16 @@ from tkinter import  Frame, Button, Label
 from settings import Settings
 
 class DifficultyScreen(Frame):    
-     def __init__(self, master):
+     def __init__(self, master, back):
         super().__init__(master)
 
         self.settings = Settings()
+        self.back_callback = back
 
         self.pack()
+
+        self.back_button = Button(self, text="← Back", font=self.settings.label_font, command=self.back_callback, bd=0)
+        self.back_button.pack(anchor='nw', pady=(10, 0), padx=(10, 0))
 
         self.game_title = Label(self, text=self.settings.title, font=self.settings.title_font)
         self.game_title.pack(pady=(100, 10))
