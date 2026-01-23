@@ -3,11 +3,12 @@ from tkinter import  Frame, Button, Label
 from settings import Settings
 
 class DifficultyScreen(Frame):    
-     def __init__(self, master, back):
+     def __init__(self, master, back, easy):
         super().__init__(master)
 
         self.settings = Settings()
         self.back_callback = back
+        self.easy_callback = easy
 
         self.pack()
 
@@ -20,7 +21,7 @@ class DifficultyScreen(Frame):
         self.select_difficulty_label = Label(self, text="Select level of difficulty", font=self.settings.label_font)
         self.select_difficulty_label.pack(pady=(0, 50))
 
-        self.easy_level_button = Button(self, text="EASY", width=self.settings.difficulty_button_width, font=self.settings.button_font, background=self.settings.GREY)
+        self.easy_level_button = Button(self, text="EASY", width=self.settings.difficulty_button_width, font=self.settings.button_font, background=self.settings.GREY, command=self.easy_callback)
         self.easy_level_button.pack(pady=(30, 10))
         self.normal_level_button = Button(self, text="NORMAL", width=self.settings.difficulty_button_width, font=self.settings.button_font, background=self.settings.GREY)
         self.normal_level_button.pack(pady=(30, 30))

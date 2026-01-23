@@ -17,8 +17,13 @@ class Settings:
         self.title_font = tkFont.Font(family=self.font_family, size=45, weight="bold")
         self.label_font = tkFont.Font(family=self.font_family, size=14)
         self.button_font = tkFont.Font(family=self.font_family, size=24, weight="bold")
+        self.entry_font = tkFont.Font(family=self.font_family, size=40, weight="bold")
 
         # Buttons
         self.button_width = 10
         self.difficulty_button_width = 15
+        self.submit_button_width = 10
+
+        # Entry
+        self.entry_width = 2
 
